@@ -86,8 +86,12 @@ input[type="submit"] {
 #resultsec {
 	color:#fff;
 	margin:0 auto;
-	width:35em;
+	width:40em;
 	text-shadow:black 2px 2px 2px;
+}
+li {
+	font-size:1.5em;
+	line-height:150%;
 }
 footer {
 	position:absolute;

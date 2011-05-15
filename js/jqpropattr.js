@@ -24,11 +24,13 @@ $().ready(function() {
 		readonly : "prop",
 		required : "prop",
 		scoped : "prop",
-		selected : "prop", 
+		selected : "prop",
+		selectedIndex : "prop",  
 		location : "prop", 
 		defaultValue : "prop", 
 		nodeName : "prop", 
-		nodeType : "prop"
+		nodeType : "prop", 
+		tagName : "prop"
 	}, 
 	attrs = {
 		accesskey : "attr", 
@@ -39,7 +41,12 @@ $().ready(function() {
 		href : "attr",
 		id : "attr",
 		label : "attr",
-		rel : "attr"
+		rel : "attr", 
+		src : "attr", 
+		style : "attr", 
+		tabindex : "attr", 
+		title : "attr", 
+		type : "attr"
 	}, 
 	queryField = $("#attr_prop"), 
 	resultsContainer = $("#result");
@@ -85,6 +92,7 @@ $().ready(function() {
 		resultsContainer.empty().html(matches);
 	};
 	
+	/* Bind the keyup and submit events to the input field and form */
 	$("#attr_prop").keyup(function() {
 		jQPropAttr();		
 	});
