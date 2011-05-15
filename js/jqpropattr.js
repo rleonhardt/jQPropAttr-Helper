@@ -1,7 +1,12 @@
 $().ready(function() {
-			
+	/* Case sensitive start of string match */
 	String.prototype.startsWith = function(str) {
-		return (this.match("^"+str)==str)
+		return this.substr(0, str.length) === str;
+	};
+	
+	/* Case insensitive start of string match */
+	String.prototype.startsWithIgnoreCase = function(str) {
+		return this.toLowerCase().substr(0, str.length) === str.toLowerCase();
 	};
 	
 	var props = {
@@ -20,11 +25,21 @@ $().ready(function() {
 		required : "prop",
 		scoped : "prop",
 		selected : "prop", 
-		location : "prop"
+		location : "prop", 
+		defaultValue : "prop", 
+		nodeName : "prop", 
+		nodeType : "prop"
 	}, 
 	attrs = {
 		accesskey : "attr", 
-		align : "attr"
+		align : "attr", 
+		"class" : "attr", 
+		contenteditable : "attr", 
+		draggable : "attr", 
+		href : "attr",
+		id : "attr",
+		label : "attr",
+		rel : "attr"
 	}, 
 	queryField = $("#attr_prop"), 
 	resultsContainer = $("#result");
@@ -36,13 +51,18 @@ $().ready(function() {
 	};
 	
 	var getPropertyUsage = function(value) {
-		var matches = "";
+		var matches = "", 
+		prop;
 			
 		for(prop in props) {
-			if(prop.startsWith(value)) {
-				matches += "<li>For " + prop + " you should use the prop() function.</li>";
-			}
+			/* Filtering out erroneous keys that might have been added to the Object prototype */
+			if(props.hasOwnProperty(prop)) {
+				if(prop.startsWithIgnoreCase(value)) {
+					matches += "<li>For " + prop + " you should use the prop() function.</li>";
+				}
+			}			
 		}
+		
 		if(matches !== "") {
 			resultsContainer.empty().html(matches);
 		} else {
@@ -51,15 +71,19 @@ $().ready(function() {
 	};
 	
 	var getAttrUsage = function(value) {
-		var matches = "";
+		var matches = "", 
+		attr;
 			
 		for(attr in attrs) {
-			if(attr.startsWith(value)) {
-				matches += "<li>For " + attr + " you should use the attr() function.</li>";
-			}
+			/* Filtering out erroneous keys that might have been added to the Object prototype */
+			if(attrs.hasOwnProperty(attr)) {
+				if(attr.startsWithIgnoreCase(value)) {
+					matches += "<li>For " + attr + " you should use the attr() function.</li>";
+				}
+			}			
 		}
 		resultsContainer.empty().html(matches);
-	}
+	};
 	
 	$("#attr_prop").keyup(function() {
 		jQPropAttr();		
