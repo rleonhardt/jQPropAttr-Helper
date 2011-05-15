@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>jQPropAttr Decision Chart</title>
+	<link href='http://fonts.googleapis.com/css?family=Mako' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script src="js/jqpropattr.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Should I Use prop() or attr()?</h1>
+		<h2>From the jQuery API</h2>
+		<blockquote>
+			<span class="start-quote">&ldquo;</span>The .prop() method should be used for boolean attributes/properties and for properties which do not exist in html (such as window.location). All other attributes (ones you can see in the html) can and should continue to be manipulated with the .attr() method.<span class="end-quote">&rdquo;</span>
+		</blockquote>
+	</header>
+	<article>
+		<section id="formsec">
+			<form name="question" id="question" action="#ajax" method="get">
+				<fieldset id="q_field">
+					<label for="attr_prop">Attribute/Property Name:</label>
+					<input type="text" name="attr_prop" id="attr_prop" />
+					<input type="submit" value="Usage" />
+				</fieldset>
+			</form>
+		</section>
+		
+		<section id="resultsec">
+			<p>Enter the attribute or property you want to access above to learn which is the optimal function to use.</p>
+			<ul id="result"></ul>
+		</section>
+	</article>
+	<footer>
+		<p><a href="http://api.jquery.com/" id="jquery">jQuery API</a> | <a href="http://api.jquery.com/" id="github">Contribute on Github</a> | <a href="http://expansive-derivation.ossreleasefeed.com/">Schalk Neethling (ossreleasefeed:espressive)<a/></p>
+	</footer>
+</body>
+</html>

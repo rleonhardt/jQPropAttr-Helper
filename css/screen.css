@@ -1,0 +1,112 @@
+html, body {
+	background:#333 url(../images/background.png) top left repeat;
+	margin:0;
+	padding:0;
+	font-family: 'Mako', arial, serif;
+}
+header {
+	margin:0 auto;
+	width:35em;
+} 
+h1 {
+	color:#fff;
+	text-shadow:black 2px 2px 2px;
+}
+p {
+	color:#fff;
+	text-shadow:black 2px 2px 2px;
+	margin-left:-5em;
+	width:55em;
+}
+h2 {
+	font-size:1.3em;
+}
+h2, 
+blockquote {
+	color:#fff;
+	text-shadow:black 2px 2px 2px;
+}
+a:link, 
+a:visited {
+	color:#fff;
+	text-decoration:none;
+}
+.start-quote {
+	position:relative;
+	top:20px;
+	margin:0;
+	padding:0;
+	line-height:0;
+	font-family:Times;
+	font-size:3.5em;
+}
+.end-quote {
+	position:relative;
+	top:30px;
+	margin:0;
+	padding:0;
+	line-height:0;
+	font-family:Times;
+	font-size:3.5em;
+}
+#formsec {
+	background-color:#a8a3a3;
+	padding:1.5em;
+	border-top:1px dashed #fff;
+	border-bottom:1px dashed #fff;
+	box-shadow:#1a1a1a 2px 2px 2px;
+}
+fieldset {
+	margin:0 auto;
+	width:23em;
+	border:0;
+}
+label {
+	display:block;
+	color:#fff;
+	padding:.5em .5em .5em 0;
+	text-shadow:black 2px 2px 1px;
+}
+input[type="text"] {
+	background-color:#333;
+	color:#fff;
+	padding:.5em;
+	border:1px solid #edecec;
+	width:15em;
+}
+input[type="submit"] {
+	background-color:#666;
+	color:#fff;
+	padding:.7em;
+	border:0;
+	border-radius:5px;
+	cursor:pointer;
+	cursor:hand;
+}
+#resultsec {
+	color:#fff;
+	margin:0 auto;
+	width:35em;
+	text-shadow:black 2px 2px 2px;
+}
+footer {
+	position:absolute;
+	bottom:0;
+	left:33%;
+	width:30em;
+}
+footer p {
+	padding:.7em;
+}
+#jquery {
+	display:inline-block;
+	background:transparent url(../images/jquery.png) 0 0 no-repeat;
+	padding:10px 0 10px 40px;
+	height:26px;
+}
+#github {
+	display:inline-block;
+	background:transparent url(../images/octocat.png) 0 0 no-repeat;
+	padding:10px 0 10px 40px;
+	height:26px;
+}
