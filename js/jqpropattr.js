@@ -29,20 +29,18 @@ $().ready(function() {
 	queryField = $("#attr_prop"), 
 	resultsContainer = $("#result");
 	
-	
-	$("#attr_prop").keyup(function() {
-		
+	var jQPropAttr = function() {
 		if(queryField.val().length > 0) {
 			getPropertyUsage(queryField.val());
 		}
-	});
+	};
 	
 	var getPropertyUsage = function(value) {
 		var matches = "";
 			
 		for(prop in props) {
 			if(prop.startsWith(value)) {
-				matches += "<li>For " + prop + " you should use prop() function.</li>";
+				matches += "<li>For " + prop + " you should use the prop() function.</li>";
 			}
 		}
 		if(matches !== "") {
@@ -61,5 +59,14 @@ $().ready(function() {
 			}
 		}
 		resultsContainer.empty().html(matches);
-	}			
+	}
+	
+	$("#attr_prop").keyup(function() {
+		jQPropAttr();		
+	});
+	
+	$("#question").submit(function(event) {
+		event.preventDefault();
+		jQPropAttr();		
+	});		
 });
