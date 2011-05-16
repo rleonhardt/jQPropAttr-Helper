@@ -92,9 +92,9 @@ $().ready(function() {
 		resultsContainer.empty().html(matches);
 	};
 	
-	/* Bind the keyup and submit events to the input field and form */
+	/* Bind the keyup, submit events to the input field and form */
 	$("#attr_prop").keyup(function() {
-		jQPropAttr();		
+		jQPropAttr();
 	});
 	
 	$("#question").submit(function(event) {

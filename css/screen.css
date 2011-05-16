@@ -1,5 +1,5 @@
 html, body {
-	background:#333 url(../images/background.png) top left repeat;
+	background:#0f1923 url(../images/background_wg.png) top left repeat;
 	margin:0;
 	padding:0;
 	font-family: 'Mako', arial, serif;
@@ -64,24 +64,19 @@ fieldset {
 label {
 	display:block;
 	color:#fff;
-	padding:.5em .5em .5em 0;
+	padding:.5em .5em .5em 2em;
 	text-shadow:black 2px 2px 1px;
 }
 input[type="text"] {
-	background-color:#333;
+	background:#0f1923 url(../images/magnifier.png) 95% .5em no-repeat;
 	color:#fff;
 	padding:.5em;
 	border:1px solid #edecec;
-	width:15em;
+	width:18em;
 }
 input[type="submit"] {
-	background-color:#666;
-	color:#fff;
-	padding:.7em;
-	border:0;
-	border-radius:5px;
-	cursor:pointer;
-	cursor:hand;
+	position:absolute;
+	left:-99999em;
 }
 #resultsec {
 	color:#fff;
